@@ -7,16 +7,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 app.use(express.json())
 const corsOptions = {
   // origin: process.env.HOST,
-  origin: process.env.FRONTEND_URL,
-  credentials: true,
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "Content-Length",
-    "X-Requested-With",
-    "Accept",
-  ],
-  methods: ["GET", "PUT", "POST", "DELETE", "OPTIONS"],
+  origin: "*",
   optionsSuccessStatus: 200,
 }
 
